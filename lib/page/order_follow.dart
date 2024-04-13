@@ -63,7 +63,8 @@ class Follow_Page extends StatelessWidget {
                 child: const Column(children: [
                   CircleAvatar(
                     backgroundColor: Color.fromARGB(255, 92, 203, 255),
-                    child: Icon(Icons.food_bank, color: Colors.white),
+                    child: Icon(Icons.people, color: Colors.white),
+                    radius: 30,
                   ),
                   Text(
                     'Driver name',
