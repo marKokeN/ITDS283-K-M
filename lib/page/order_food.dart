@@ -1,3 +1,4 @@
+import 'package:app_whaletreat/page/order_nearme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -15,6 +16,12 @@ class Order_Food_Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
         title: Text('Order_Food'),
         backgroundColor: const Color.fromARGB(174, 24, 241, 241),
         shape: const RoundedRectangleBorder(
@@ -23,40 +30,47 @@ class Order_Food_Page extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 5),
-          SearchBar(),
-          SizedBox(height: 30),
-          Container(
-            height: 70,
-            width: 400,
-            decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 92, 203, 255),
-              borderRadius: BorderRadius.all(Radius.circular(20.0)),
-            ),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(Icons.map),
-                Text("12/345 Kelefvalion St."),
-              ],
-            ),
+      body: Center(
+  child: SingleChildScrollView(
+    reverse: true,
+    padding: EdgeInsets.all(30),
+    child: Column(
+      children: [
+        SizedBox(height: 5),
+        SearchBar(),
+        SizedBox(height: 30),
+        Container(
+          height: 70,
+          width: 400,
+          decoration: const BoxDecoration(
+            color: Color.fromARGB(255, 92, 203, 255),
+            borderRadius: BorderRadius.all(Radius.circular(20.0)),
           ),
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.map),
+              Text("12/345 Kelefvalion St."),
+            ],
+          ),
+        ),
         
-          SizedBox(height: 50),
-          Container(
-            child: 
-          Row(
-            mainAxisAlignment:
-                MainAxisAlignment.spaceEvenly, // Adjust as needed
+        SizedBox(height: 50),
+        Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Adjust as needed
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => const Nearme_Page()),
+                      );
+                    },
                     color: Color.fromARGB(255, 92, 203, 255),
                     textColor: Colors.white,
                     padding: EdgeInsets.all(16),
@@ -76,8 +90,7 @@ class Order_Food_Page extends StatelessWidget {
                     textColor: Colors.white,
                     padding: EdgeInsets.all(16),
                     shape: CircleBorder(),
-                    child: Icon(Icons.airplane_ticket,
-                        size: 24), // Change to your desired icon
+                    child: Icon(Icons.airplane_ticket, size: 24),
                   ),
                   SizedBox(height: 10),
                   Text('Promotion'),
@@ -92,8 +105,7 @@ class Order_Food_Page extends StatelessWidget {
                     textColor: Colors.white,
                     padding: EdgeInsets.all(16),
                     shape: CircleBorder(),
-                    child: Icon(Icons.apple,
-                        size: 24), // Change to your desired icon
+                    child: Icon(Icons.apple, size: 24),
                   ),
                   SizedBox(height: 10),
                   Text('Healthy food'),
@@ -101,29 +113,31 @@ class Order_Food_Page extends StatelessWidget {
               ),
             ],
           ),
-          ),
-          SizedBox(height: 10),
-          Container(
-            alignment: Alignment.centerLeft,
-            child: const Row(
-              children: [
+        ),
+        SizedBox(height: 10),
+        Container(
+          alignment: Alignment.centerLeft,
+          child: const Row(
+            children: [
               Text('Suggestion'),
               Icon(Icons.forward),
-              ],
-            ),
+            ],
           ),
-          SizedBox(height: 40),
-         Container(
-  height: 200, // Adjust the height according to your requirement
-  width: 400, // Adjust the width according to your requirement
-  decoration: BoxDecoration(
-    borderRadius: BorderRadius.circular(20.0),
-    color: Colors.blue
+        ),
+        SizedBox(height: 40),
+        Container(
+          height: 200,
+          width: 400,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            color: Colors.blue,
+          ),
+        ),
+      ],
+    ),
   ),
-)
-        ],
-        
-      ),
+),
+
       
 
       

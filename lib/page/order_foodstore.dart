@@ -1,3 +1,4 @@
+import 'package:app_whaletreat/page/order_comfirm.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -131,7 +132,28 @@ class Foodstore_Page extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-
+ElevatedButton(
+                onPressed: () {
+                  // Handle login functionality
+                  Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context)
+                        => const Order_Confirm()  ),
+                        );
+                },
+                style: ElevatedButton.styleFrom(
+                backgroundColor:  Color.fromRGBO(144,214,126,25),
+                //padding: EdgeInsets.symmetric(horizontal: 90, vertical: 20),
+                  minimumSize: Size(320, 50), // Set the minimum width and height
+                shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10), // Adjust the border radius to make it more square
+    )
+              ),
+                child: const Text('Add to your cart',style: TextStyle(
+                  color: Colors.white ,
+                ),)
+               
+              ),
                 
             ],
           ),

@@ -1,3 +1,5 @@
+import 'package:app_whaletreat/main.dart';
+import 'package:app_whaletreat/page/home_page.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter/widgets.dart';
 
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
        title: 'WhaleTreat Login', // Set app title (optional)
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color.fromARGB(173, 24, 241, 241), // Set background color
+        //scaffoldBackgroundColor: const Color.fromARGB(173, 24, 241, 241), // Set background color
       ),
       home: const LoginPage(), // Ensure const for widget immutability
     );
@@ -47,92 +49,93 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      appBar: AppBar(
-        title: const Text('WhaleTreat login'),
-      ),
-      body: Center(       
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+      // appBar: AppBar(
+      //   title: const Text('WhaleTreat login'),
+      // ),
+      body: Container(
+  color: const Color.fromARGB(174, 24, 241, 241), // Set background color
+  child: Center(
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          const Text(
+            'WHALETREAT',
+            style: TextStyle(fontSize: 30),
+          ),
+          const SizedBox(height: 20),
+          TextField(
+            controller: _usernameController,
+            decoration: const InputDecoration(
+              labelText: 'Username',
+              fillColor: Colors.white,
+              filled: true,
+              border: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.white)
+              )
+            ),
+          ),
+          const SizedBox(height: 10),
+          TextField(
+            controller: _passwordController,
+            obscureText: true,
+            decoration: const InputDecoration(
+              labelText: 'Password',
+              fillColor: Colors.white,
+              filled: true,
+              border: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.white)
+              )
+            ),
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              const Text(
-                'WHALETREAT',
-                style: TextStyle(fontSize: 30),
+              TextButton(
+                onPressed: () {
+                  // Handle forgot password functionality
+                },
+                child: const Text('Forgot Password?'),
               ),
-              const SizedBox(height: 20),
-              TextField(
-                
-                controller: _usernameController,
-                decoration: const InputDecoration(
-                  labelText: 'Username',
-                  fillColor: Colors.white, // Set fill color to white
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white)
-                  )
-                ),
+              const SizedBox(
+                height: 20,
               ),
-              const SizedBox(height: 10),
-              TextField(
-                controller: _passwordController,
-                obscureText: true,
-                decoration: const InputDecoration(
-                  labelText: 'Password',
-                  fillColor: Colors.white, // Set fill color to white
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white)
-                  )
-                ),
-              ),
-              const SizedBox(height: 20),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  const Text('New User?'),
                   TextButton(
                     onPressed: () {
-                      // Handle forgot password functionality
+                      // Handle sign up functionality
                     },
-                    child: const Text('Forgot Password?'),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      const Text('New User?'),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text('Sign Up'),
-                      )
-                    ],
+                    child: const Text('Sign Up'),
                   )
                 ],
-              ),
-              ElevatedButton(
-                
-                onPressed: () {
-                  // Handle login functionality
-                },
-                style: ElevatedButton.styleFrom(
-                backgroundColor:  Color.fromRGBO(144,214,126,25),
-              
-                // padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                textStyle: const TextStyle(
-                  color: Colors.white ,
-                //fontSize: 30,
-                //fontWeight: FontWeight.bold
-                )),
-                child: const Text('Login')
-               
-              ),
+              )
             ],
           ),
-        ),
+          ElevatedButton(
+            onPressed: () {
+              // Handle login functionality
+              // Navigator.push(
+              //   context, 
+              //   MaterialPageRoute(builder: (context) => MyHomePage()),
+              // );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromRGBO(144, 214, 126, 1),
+            ),
+            child: const Text('Login'),
+          ),
+        ],
       ),
+    ),
+  ),
+),
+
     );
   }
 }

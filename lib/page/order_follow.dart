@@ -1,3 +1,4 @@
+import 'package:app_whaletreat/page/order_finish.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -115,6 +116,29 @@ class Follow_Page extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+              SizedBox(height: 50),
+              ElevatedButton(
+                onPressed: () {
+                  // Handle login functionality
+                  Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context)
+                        => const Review_Page() ),
+                        );
+                },
+                style: ElevatedButton.styleFrom(
+                backgroundColor:  Color.fromRGBO(144,214,126,25),
+                //padding: EdgeInsets.symmetric(horizontal: 90, vertical: 20),
+                  minimumSize: Size(320, 50), // Set the minimum width and height
+                shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10), // Adjust the border radius to make it more square
+    )
+              ),
+                child: const Text('Confirm',style: TextStyle(
+                  color: Colors.white ,
+                ),)
+               
               ),
               const SizedBox(height: 20),
             ],
