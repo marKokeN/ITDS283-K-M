@@ -1,12 +1,14 @@
+import 'package:app_whaletreat/page/order_foodstore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //order_nearme.dart
 
-void main() {
-  runApp(const MaterialApp(
-    // Or WidgetsApp
-    home: Nearme_Page(),
-  ));
-}
+// void main() {
+//   runApp(const MaterialApp(
+//     // Or WidgetsApp
+//     home: Nearme_Page(),
+//   ));
+// }
 
 class Nearme_Page extends StatelessWidget {
   const Nearme_Page({super.key});
@@ -41,36 +43,53 @@ class Nearme_Page extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 ),
                 const SizedBox(height: 30),
-                Container(
-                  height: 50, // Adjust the height according to your requirement
-                  width: 400, // Adjust the width according to your requirement
-                  decoration: const BoxDecoration(
-                      //borderRadius: BorderRadius.circular(20.0),
-                      color: Color.fromARGB(255, 92, 203, 255)),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SizedBox(width: 20),
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        child: Icon(Icons.food_bank,
-                            color: Colors.black),
-                      ),
-                      SizedBox(width: 20),
-                      Text(
-                        'K**',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                GestureDetector(
+                  onTap: () {
+                    // Add your onPressed function here
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context)
+                        => const Foodstore_Page()  ),
+                        );
+                    
+                  },
+                  child: Container(
+                    height: 50,
+                    width: 400,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 92, 203, 255),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(width: 20),
+                        CircleAvatar(
+                          backgroundColor: Colors.white,
+                          child: Icon(Icons.food_bank, color: Colors.black),
                         ),
-                      ),
-                    ],
+                        SizedBox(width: 20),
+                        Text(
+                          'K**',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 20),
-
-                Container(
+                GestureDetector(
+                  onTap: () {
+                       Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context)
+                        => const Foodstore_Page()  ),
+                        );
+                  },
+                  child:  Container(
                   height: 50, // Adjust the height according to your requirement
                   width: 400, // Adjust the width according to your requirement
                   decoration: const BoxDecoration(
@@ -82,8 +101,7 @@ class Nearme_Page extends StatelessWidget {
                       SizedBox(width: 20),
                       CircleAvatar(
                         backgroundColor: Colors.white,
-                        child: Icon(Icons.food_bank,
-                            color: Colors.black),
+                        child: Icon(Icons.food_bank, color: Colors.black),
                       ),
                       SizedBox(width: 20),
                       Text(
@@ -97,8 +115,8 @@ class Nearme_Page extends StatelessWidget {
                     ],
                   ),
                 ),
+                ),
                 const SizedBox(height: 20),
-
                 Container(
                   height: 50, // Adjust the height according to your requirement
                   width: 400, // Adjust the width according to your requirement
@@ -111,8 +129,7 @@ class Nearme_Page extends StatelessWidget {
                       SizedBox(width: 20),
                       CircleAvatar(
                         backgroundColor: Colors.white,
-                        child: Icon(Icons.food_bank,
-                            color: Colors.black),
+                        child: Icon(Icons.food_bank, color: Colors.black),
                       ),
                       SizedBox(width: 20),
                       Text(
@@ -127,7 +144,6 @@ class Nearme_Page extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-
                 Container(
                   height: 50, // Adjust the height according to your requirement
                   width: 400, // Adjust the width according to your requirement
@@ -140,8 +156,7 @@ class Nearme_Page extends StatelessWidget {
                       SizedBox(width: 20),
                       CircleAvatar(
                         backgroundColor: Colors.white,
-                        child: Icon(Icons.food_bank,
-                            color: Colors.black),
+                        child: Icon(Icons.food_bank, color: Colors.black),
                       ),
                       SizedBox(width: 20),
                       Text(
@@ -156,8 +171,15 @@ class Nearme_Page extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-
-                Container(
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context)
+                        => const Foodstore_Page()  ),
+                        );
+                  },
+                  child: Container(
                   height: 50, // Adjust the height according to your requirement
                   width: 400, // Adjust the width according to your requirement
                   decoration: const BoxDecoration(
@@ -169,8 +191,7 @@ class Nearme_Page extends StatelessWidget {
                       SizedBox(width: 20),
                       CircleAvatar(
                         backgroundColor: Colors.white,
-                        child: Icon(Icons.food_bank,
-                            color: Colors.black),
+                        child: Icon(Icons.food_bank, color: Colors.black),
                       ),
                       SizedBox(width: 20),
                       Text(
@@ -184,8 +205,9 @@ class Nearme_Page extends StatelessWidget {
                     ],
                   ),
                 ),
+                ),
+                
                 const SizedBox(height: 20),
-
                 Container(
                   height: 50, // Adjust the height according to your requirement
                   width: 400, // Adjust the width according to your requirement
@@ -198,8 +220,7 @@ class Nearme_Page extends StatelessWidget {
                       SizedBox(width: 20),
                       CircleAvatar(
                         backgroundColor: Colors.white,
-                        child: Icon(Icons.food_bank,
-                            color: Colors.black),
+                        child: Icon(Icons.food_bank, color: Colors.black),
                       ),
                       SizedBox(width: 20),
                       Text(
@@ -214,8 +235,15 @@ class Nearme_Page extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-
-                Container(
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context)
+                        => const Foodstore_Page()  ),
+                        );
+                    },
+                    child:Container(
                   height: 50, // Adjust the height according to your requirement
                   width: 400, // Adjust the width according to your requirement
                   decoration: const BoxDecoration(
@@ -227,8 +255,7 @@ class Nearme_Page extends StatelessWidget {
                       SizedBox(width: 20),
                       CircleAvatar(
                         backgroundColor: Colors.white,
-                        child: Icon(Icons.food_bank,
-                            color: Colors.black),
+                        child: Icon(Icons.food_bank, color: Colors.black),
                       ),
                       SizedBox(width: 20),
                       Text(
@@ -242,6 +269,8 @@ class Nearme_Page extends StatelessWidget {
                     ],
                   ),
                 ),
+                ),
+                
                 const SizedBox(height: 20),
               ],
             ),

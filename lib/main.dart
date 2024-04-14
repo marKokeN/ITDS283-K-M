@@ -1,7 +1,7 @@
 import 'package:app_whaletreat/page/account_page.dart';
 import 'package:app_whaletreat/page/alert.dart';
 import 'package:app_whaletreat/page/home_page.dart';
-import 'package:app_whaletreat/page/order_food.dart';
+//import 'package:app_whaletreat/page/order_food.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter/widgets.dart';
 
@@ -25,7 +25,8 @@ class _MyHomePageState extends State<MyHomePage> {
     Homepage(),
     Alert_Page(),
     account_Page(),
-    Order_Food_Page(),
+   // Order_Food_Page(),
+    
   ];
 
   @override
@@ -36,8 +37,10 @@ class _MyHomePageState extends State<MyHomePage> {
          // SearchBar(),
           Expanded(child: Screen[currentIndex]),
           
+
         ],
       ),
+      
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -179,3 +182,4 @@ class _SearchBarState extends State<SearchBar> {
 //     );
 //   }
 // }
+
