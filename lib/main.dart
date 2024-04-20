@@ -1,15 +1,46 @@
+import 'package:app_whaletreat/firebase_options.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:app_whaletreat/login.dart';
 import 'package:app_whaletreat/page/account_page.dart';
 import 'package:app_whaletreat/page/alert.dart';
 import 'package:app_whaletreat/page/home_page.dart';
-import 'package:app_whaletreat/page/order_food.dart';
-import 'package:flutter/material.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+//import 'package:app_whaletreat/page/order_food.dart';
+
 //import 'package:flutter/widgets.dart';
 
-void main() {
-  runApp(MaterialApp(
-    // Or WidgetsApp
-    home: MyHomePage(),
-  ));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
+}
+
+// void main() {
+//   runApp(MaterialApp(
+//     // Or WidgetsApp
+//     debugShowCheckedModeBanner: false,
+//     home: MyHomePage(),
+//   ));
+// }
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'WhaleTreat Login',
+      theme: ThemeData(
+
+      ),
+      home: LoginPage(),
+    );
+  }
 }
 
 class MyHomePage extends StatefulWidget {
@@ -21,23 +52,28 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int currentIndex = 0;
-  final Screen = [
+  final Screen = [ 
     Homepage(),
     Alert_Page(),
     account_Page(),
-    Order_Food_Page(),
+    LoginPage(),
+   // Order_Food_Page(),
+    
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    
       body: Column(
         children: [
          // SearchBar(),
           Expanded(child: Screen[currentIndex]),
           
+
         ],
       ),
+      
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -123,6 +159,14 @@ class _SearchBarState extends State<SearchBar> {
   }
 }
 
+
+
+class FireStorageService extends ChangeNotifier{
+  FireStorageService();
+  static Future<dynamic> loadImage(BuildContext context,String Image) async{
+    return await FirebaseStorage.instance.ref().child(Image).getDownloadURL(); }
+} 
+    
     // appBar: AppBar(
       //   leading: IconButton(
       //     icon:Icon(Icons.arrow_back) ,
@@ -179,3 +223,4 @@ class _SearchBarState extends State<SearchBar> {
 //     );
 //   }
 // }
+
