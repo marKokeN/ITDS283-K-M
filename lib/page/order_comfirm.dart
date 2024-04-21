@@ -270,7 +270,7 @@ class Order_Confirm extends StatelessWidget {
                     Icon(Icons.card_membership),
                     SizedBox(width: 20),
                     Text("1234 5678 9012 3456"),
-                    SizedBox(width: 140),
+                    SizedBox(width: 110),
                     Icon(Icons.arrow_forward_ios),
                   ],
                 ),
